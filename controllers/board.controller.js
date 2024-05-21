@@ -1,6 +1,21 @@
 import service from "../service/boards.service.js";
 import { hasher } from "../service/pass.hash.js";
 
+export const createBoard = async (req, res)=>{
+    try {
+        const { title, columns} = req.body
+        if(!title || !columns){
+            res.send("title or columns is missing Please add all required fields")
+        }
+        else{
+            const result = await service.createBoard(title, columns)
+            res.send(result.rows)
+        }
+    } catch (err) {
+        res.send(err)
+    }
+}
+
 export const getBoards = async (req, res) => {
     try {
         const result = await service.getBoards()
@@ -26,7 +41,6 @@ export const updateBoard = async (req, res) => {
         let {title, columns} = req.body
         title = title ? title : (await service.getSpecData(id, "title")).rows[0].title
         columns = columns ? columns : (await service.getSpecData(id, "columns")).rows[0].columns
-        console.log(title, columns)
         const result = await service.updateBoard(id, title, columns)
         res.send(result.rows)
     } catch (err) {
@@ -34,14 +48,13 @@ export const updateBoard = async (req, res) => {
     }
 }
 
-// export const deleteUser = async (req, res) => {
-//     try {
-//         const id = req.params.userId
-//         console.log("ok")
-//         const result = await service.deleteUser(id)
-//         res.send(result.rows)
-//     } catch (err) {
-//         res.send("err")
-//     }
-// }
+export const deleteBoard = async (req, res) => {
+    try {
+        const id = req.params.boardId
+        const result = await service.deleteBoard(id)
+        res.send(result.rows)
+    } catch (err) {
+        res.send("err")
+    }
+}
 

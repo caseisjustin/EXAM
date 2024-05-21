@@ -1,13 +1,13 @@
 import { Router } from "express";
-import { getBoards, getBoardById, updateBoard } from "../controllers/board.controller.js"
+import { getBoards, getBoardById, updateBoard, createBoard, deleteBoard } from "../controllers/board.controller.js"
 
 const router = Router()
 
-// router.post("")
+router.post("/", createBoard)
 router.get("/", getBoards)
 router.get("/:boardId", getBoardById)
 router.put("/:boardId", updateBoard)
-// router.delete("/:userId", deleteUser)
+router.delete("/:boardId", deleteBoard)
 
 
 export default router;

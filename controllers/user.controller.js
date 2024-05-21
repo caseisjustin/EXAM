@@ -37,7 +37,6 @@ export const updateUser = async (req, res) => {
 export const deleteUser = async (req, res) => {
     try {
         const id = req.params.userId
-        console.log("ok")
         const result = await service.deleteUser(id)
         res.send(result.rows)
     } catch (err) {
