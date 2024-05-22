@@ -4,7 +4,7 @@
   - method: POST
   - link: /register
   - body: name, email, password = required
-
+=====================USER=======================
 * Check if user logedin
   - method: GET
   - link: /login
@@ -23,7 +23,7 @@
   - method: DELETE
   - link: /users/:id = example (/users/2)
 
-
+==========================BOARD===========================
 * Create Board
   - method: POST
   - link: /board
@@ -42,7 +42,7 @@
   - method: DELETE
   - link: /board/:boardId = example(/board/2)
 
-
+=========================TASKS==============================
 * Create Task
   - method: POST
   - link: /board/:boardId/tasks = example(/board/1/tasks)
