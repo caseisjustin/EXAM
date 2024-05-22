@@ -1,5 +1,4 @@
 import service from "../service/boards.service.js";
-import { hasher } from "../service/pass.hash.js";
 
 export const createBoard = async (req, res)=>{
     try {

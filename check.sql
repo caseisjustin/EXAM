@@ -13,13 +13,12 @@ board(
     columns INTEGER,
 )
 
-
 CREATE TABLE IF NOT EXISTS
 task(
     id SERIAL PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
-    order INT,
-    description VARCHAR(100),
+    orderr INT,
+    descriptions VARCHAR(100),
     userId INT NOT NULL,
     boardId INT NOT NULL,
     columnId INT,

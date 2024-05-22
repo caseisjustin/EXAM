@@ -5,6 +5,8 @@ import routerUser from "./routes/users.router.js"
 import routerRegister from "./routes/register.router.js"
 import routerLogIn from "./routes/login.router.js"
 import routerBoard from "./routes/board.router.js"
+import routerTask from "./routes/task.router.js"
+
 dotenv.config()
 
 const app = express()
@@ -16,5 +18,6 @@ app.use("/setup", routerSetup)
 app.use("/users", routerUser)
 app.use("/login", routerLogIn)
 app.use("/board", routerBoard)
+app.use("/board", routerTask)
 
 export default app;
