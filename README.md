@@ -1,11 +1,10 @@
 # An Exam project
 ## How to use
+=====================USER=======================
 * Create user
   - method: POST
   - link: /register
   - body: name, email, password = required
-
-=====================USER=======================
 
 * Check if user logedin
   - method: GET
